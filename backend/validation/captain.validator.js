@@ -22,6 +22,14 @@ const captainRegisterValidation = [
     .withMessage("Invalid Vehicle Type"),
 ];
 
+const captainLoginValidation = [
+  body("email").isEmail().withMessage("Invalid Email"),
+  body("password")
+    .isLength({ min: 6 })
+    .withMessage("Password must be atleast 6 characters long"),
+];
+
 module.exports = {
   captainRegisterValidation,
+  captainLoginValidation,
 };
